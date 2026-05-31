@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Level Up Life — Mindset, Movement, Mountains</title>
+<meta name="description" content="Practical guides for morning routines, trail running, dad adventures, and gamifying your fitness. Free printables + gear that keeps you accountable." />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+  /* Brand palette */
+  :root {
+    --forest: #1f3d2b;
+    --moss: #3d6b4f;
+    --sunrise: #f97316;
+    --sky: #0ea5e9;
+    --cream: #fdf8f0;
+    --ink: #0f172a;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .serif { font-family: 'Georgia', serif; }
+  .hero-bg {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(249,115,22,0.18), transparent 60%),
+      radial-gradient(900px 500px at 0% 100%, rgba(14,165,233,0.18), transparent 60%),
+      linear-gradient(180deg, #fdf8f0 0%, #fff4e6 100%);
+  }
+  .mountain-divider {
+    height: 60px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,60 L200,20 L350,80 L500,30 L650,90 L800,40 L950,100 L1100,50 L1200,70 L1200,120 L0,120 Z' fill='%23fdf8f0'/></svg>");
+    background-size: cover;
+    background-position: bottom;
+  }
+  /* Product mockup card — replace the inner SVG with your actual Redbubble product image URL in <img> */
+  .mockup {
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .mockup-shirt {
+    background: #f8fafc;
+    width: 82%;
+    height: 88%;
+    border-radius: 12px 12px 8px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-shadow: inset 0 0 0 1px #e2e8f0;
+    position: relative;
+  }
+  .mockup-shirt::before {
+    content: "";
+    position: absolute;
+    top: -6px; left: 25%; right: 25%;
+    height: 14px;
+    background: #f8fafc;
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0 0 0 1px #e2e8f0;
+  }
+  /* Pin-it button */
+  .pin-btn {
+    transition: transform .15s ease;
+  }
+  .pin-btn:hover { transform: translateY(-2px); }
+  /* Freebie card */
+  .freebie {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border: 1px dashed #f97316;
+  }
+  /* Section headings */
+  .eyebrow {
+    color: var(--sunrise);
+    letter-spacing: 0.15em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  /* Checklist printable look */
+  .printable {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+  }
+  /* Nav active */
+  .navlink { transition: color .15s; }
+  .navlink:hover { color: var(--sunrise); }
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(20px); transition: all .7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  /* Pinterest tall card ratio */
+  .pin-card { aspect-ratio: 2/3; }
+</style>
+</head>
+<body>
+<!-- ============ TOP NAV ============ -->
+<nav class="sticky top-0 z-50 bg-[var(--cream)]/90 backdrop-blur border-b border-stone-200">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2 font-black text-lg">
+      <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 text-white flex items-center justify-center">▲</span>
+      <span>Level Up Life</span>
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <a href="#morning" class="navlink">Morning Reset</a>
+      <a href="#trail" class="navlink">Trail Ready</a>
+      <a href="#dads" class="navlink">Dad Adventures</a>
+      <a href="#comeback" class="navlink">The Comeback</a>
+      <a href="#gamify" class="navlink">Gamify Fitness</a>
+      <a href="#shop" class="navlink text-[var(--sunrise)] font-bold">Shop Looks →</a>
+    </div>
+    <a href="#freebie" class="hidden md:inline-block bg-[var(--ink)] text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-[var(--sunrise)] transition">
+      Free Printable
+    </a>
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 text-sm font-medium border-t border-stone-200 pt-3">
+    <a href="#morning" class="block py-1">Morning Reset</a>
+    <a href="#trail" class="block py-1">Trail Ready</a>
+    <a href="#dads" class="block py-1">Dad Adventures</a>
+    <a href="#comeback" class="block py-1">The Comeback</a>
+    <a href="#gamify" class="block py-1">Gamify Fitness</a>
+    <a href="#shop" class="block py-1 text-[var(--sunrise)] font-bold">Shop Looks</a>
+    <a href="#freebie" class="block py-1 text-[var(--sunrise)] font-bold">Free Printable →</a>
+  </div>
+</nav>
+<!-- ============ HERO ============ -->
+<header id="home" class="hero-bg">
+  <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <span class="eyebrow">Mindset · Movement · Mountains</span>
+      <h1 class="serif text-4xl md:text-6xl font-black leading-tight mt-3">
+        Small climbs. <br/>
+        <span class="text-[var(--sunrise)]">Daily.</span> That's the whole trick.
+      </h1>
+      <p class="mt-6 text-lg text-stone-700 max-w-lg">
+        Free, no-fluff guides for people who are <em>figuring it out</em> — morning routines that stick, trail-running tips for total newbies, dad adventures with kids, and ways to turn your fitness into a real-life RPG.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#freebie" class="bg-[var(--sunrise)] text-white font-bold px-6 py-3 rounded-full hover:bg-orange-600 transition shadow-lg shadow-orange-500/20">
+          Grab the Free 30-Day Printable
+        </a>
+        <a href="#shop" class="bg-white border border-stone-300 font-bold px-6 py-3 rounded-full hover:border-[var(--sunrise)] transition">
+          See the Gear
+        </a>
+      </div>
+      <div class="mt-8 flex items-center gap-6 text-sm text-stone-600">
+        <div>⭐ 4.9/5 · 1,200+ prints sold</div>
+      </div>
+    </div>
+    <!-- Hero product collage — swap these image srcs with your actual Redbubble product mockup URLs -->
+    <div class="reveal grid grid-cols-2 gap-4">
+      <div class="mockup pin-card">
+        <div class="mockup-shirt">
+          <div class="text-center">
+            <div class="text-xs tracking-[0.2em] text-[var(--sunrise)] font-bold">LEVEL UP</div>
+            <div class="text-2xl font-black leading-none mt-1">DAILY</div>
+            <div class="text-[var(--sunrise)] text-2xl mt-1">▲</div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup pin-card mt-8">
+        <div class="mockup-shirt">
+          <div class="text-center">
+            <div class="text-xl font-black leading-tight">EARN YOUR<br/>SUNRISE</div>
+            <div class="text-[var(--sunrise)] text-xl">▲ ☀ ▲</div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup pin-card">
+        <div class="mockup-shirt">
+          <div class="text-center">
+            <div class="text-xs tracking-[0.2em] text-stone-700 font-bold">TRAILBLAZER</div>
+            <div class="text-xl font-black leading-tight mt-1">DAD</div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup pin-card mt-8">
+        <div class="mockup-shirt">
+          <div class="text-center">
+            <div class="text-xs tracking-[0.2em] text-[var(--sky)] font-bold">THE COMEBACK</div>
+            <div class="text-xl font-black leading-tight mt-1">CLUB</div>
+            <div class="text-xs mt-2 text-stone-500">Stronger Than Before</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mountain-divider"></div>
+</header>
+<!-- ============ SECTION 1: MORNING RESET ============ -->
+<section id="morning" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <span class="eyebrow">Content Pillar #1</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">The 5-Minute Morning Reset</h2>
+      <p class="text-stone-600 mt-4 text-lg">
+        You don't need a 2-hour routine. You need <em>one tiny habit</em> you do before your phone does. This is the exact 5-step sequence that stuck for me after years of failing at "owning the morning."
+      </p>
+      <ol class="mt-8 space-y-4">
+        <li class="flex gap-4">
+          <span class="w-9 h-9 rounded-full bg-[var(--sunrise)] text-white flex items-center justify-center font-bold shrink-0">1</span>
+          <div>
+            <div class="font-bold">Light first. Screen second.</div>
+            <div class="text-sm text-stone-600">Open a curtain or step outside for 60 seconds before you unlock your phone. Sunlight resets your circadian clock faster than any app.</div>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-9 h-9 rounded-full bg-[var(--sunrise)] text-white flex items-center justify-center font-bold shrink-0">2</span>
+          <div>
+            <div class="font-bold">Drink 16 oz of water.</div>
+            <div class="text-sm text-stone-600">Add a pinch of salt + lemon. You're rehydrating after 8 hours of fasting. It's the single highest-ROI move of the day.</div>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-9 h-9 rounded-full bg-[var(--sunrise)] text-white flex items-center justify-center font-bold shrink-0">3</span>
+          <div>
+            <div class="font-bold">2 minutes of movement.</div>
+            <div class="text-sm text-stone-600">Not a workout. Just: 10 air squats, 10 push-ups, 10 jumping jacks. Repeat. You're telling your body the day has started.</div>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-9 h-9 rounded-full bg-[var(--sunrise)] text-white flex items-center justify-center font-bold shrink-0">4</span>
+          <div>
+            <div class="font-bold">Write ONE sentence.</div>
+            <div class="text-sm text-stone-600">"Today I'm choosing to…" Done. Journaling doesn't need to be a spiritual practice. It can be a steering wheel.</div>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-9 h-9 rounded-full bg-[var(--sunrise)] text-white flex items-center justify-center font-bold shrink-0">5</span>
+          <div>
+            <div class="font-bold">THEN check your phone.</div>
+            <div class="text-sm text-stone-600">By now, you've already won the morning. Reactivity is optional.</div>
+          </div>
+        </li>
+      </ol>
+      <div class="mt-8">
+        <a href="#freebie" class="inline-block bg-[var(--ink)] text-white font-bold px-6 py-3 rounded-full hover:bg-[var(--sunrise)] transition">
+          ↓ Get the printable checklist
+        </a>
+      </div>
+    </div>
+    <!-- Product showcase for this pillar -->
+    <aside class="reveal">
+      <div class="bg-[#fdf4ec] rounded-3xl p-6 border border-orange-100">
+        <div class="text-xs font-bold tracking-widest text-[var(--sunrise)] uppercase">Wear the reminder</div>
+        <h3 class="serif text-2xl font-black mt-1">Morning Reset Collection</h3>
+        <p class="text-sm text-stone-600 mt-2">T-shirts, mugs, and journals for the "own your morning" crowd.</p>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <!-- REPLACE the inner SVG below with: <img src="YOUR-REDBUBBLE-PRODUCT-URL.jpg" class="rounded-lg w-full h-full object-cover" /> -->
+          <div class="mockup">
+            <div class="mockup-shirt text-center">
+              <div class="text-xl font-black leading-tight">OWN YOUR<br/>MORNING</div>
+              <div class="text-[var(--sunrise)] text-3xl mt-2">⏰</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center">
+              <div class="text-xl font-black leading-tight">RESET<br/>& RISE</div>
+              <div class="text-[var(--sunrise)] text-3xl mt-2">🌅</div>
+            </div>
+          </div>
+          <div class="mockup col-span-2">
+            <div class="mockup-shirt text-center">
+              <div class="text-xl font-black leading-tight">GLOW UP<br/>SEASON</div>
+              <div class="text-[var(--sunrise)] text-3xl mt-2">☀ ✌</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block mt-5 text-center bg-[var(--sunrise)] text-white font-bold px-5 py-3 rounded-full hover:bg-orange-600 transition">
+          Shop Morning Reset →
+        </a>
+      </div>
+      <!-- Pinterest tip callout -->
+      <div class="mt-5 bg-[#f0f9ff] border border-sky-100 rounded-3xl p-5 text-sm text-sky-900">
+        <div class="font-bold">📌 Pin this section</div>
+        <div class="mt-1">Best pin: a tall infographic titled <em>"The 5-Minute Morning Reset (No Willpower Needed)"</em> with each step as a row. Links here.</div>
+      </div>
+    </aside>
+  </div>
+</section>
+<!-- ============ SECTION 2: TRAIL READY ============ -->
+<section id="trail" class="py-20 bg-[#f0fdf4]">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+    <aside class="reveal order-2 md:order-1">
+      <div class="bg-white rounded-3xl p-6 border border-green-100 shadow-sm">
+        <div class="text-xs font-bold tracking-widest text-[var(--moss)] uppercase">Hit the trail in style</div>
+        <h3 class="serif text-2xl font-black mt-1">No Trail Too Tough Collection</h3>
+        <p class="text-sm text-stone-600 mt-2">Tees, stickers, and water bottles for your first 5K on dirt.</p>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="mockup">
+            <div class="mockup-shirt text-center">
+              <div class="text-lg font-black leading-tight">NO TRAIL<br/>TOO TOUGH</div>
+              <div class="text-[var(--moss)] text-xl mt-1">〰</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center">
+              <div class="text-lg font-black leading-tight">STRONGER<br/>EVERY MILE</div>
+              <div class="text-sky-600 text-xl mt-1">→</div>
+            </div>
+          </div>
+          <div class="mockup col-span-2">
+            <div class="mockup-shirt text-center">
+              <div class="text-xl font-black leading-tight">TRAIN<br/>OUTSIDE</div>
+              <div class="text-[var(--moss)] text-3xl mt-1">🌲 ⚙</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block mt-5 text-center bg-[var(--moss)] text-white font-bold px-5 py-3 rounded-full hover:bg-green-800 transition">
+          Shop Trail Gear →
+        </a>
+      </div>
+      <div class="mt-5 bg-[#f0fdf4] border border-green-200 rounded-3xl p-5 text-sm text-green-900">
+        <div class="font-bold">📌 Pin this section</div>
+        <div class="mt-1">Best pin: <em>"Trail Running for Total Newbies: 7 Things I Wish I Knew"</em> — tall infographic with icons.</div>
+      </div>
+    </aside>
+    <div class="reveal order-1 md:order-2">
+      <span class="eyebrow">Content Pillar #2</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">Trail Running for Total Newbies</h2>
+      <p class="text-stone-600 mt-4 text-lg">
+        You don't need fancy shoes. You don't need a Strava plan. You need to not fall on your first hill and actually <em>want</em> to come back. Here's the honest starter guide.
+      </p>
+      <div class="mt-6 space-y-5">
+        <div class="printable p-5">
+          <div class="font-bold text-[var(--moss)]"> The "Don't Buy Shoes Yet" Rule</div>
+          <p class="text-sm text-stone-700 mt-1">Do 3 runs in your current sneakers on an easy, flat trail. If you love it, THEN invest in trail shoes. Most people quit before run #3. Don't waste $140.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="font-bold text-[var(--moss)]">🗺️ Pick a Loop, Not an Out-and-Back</div>
+          <p class="text-sm text-stone-700 mt-1">Psychology hack: a loop feels like an adventure. An out-and-back feels like a commute. Use AllTrails and filter "under 2 miles, easy, loop."</p>
+        </div>
+        <div class="printable p-5">
+          <div class="font-bold text-[var(--moss)]">🚶 Walk the Hills. No Shame.</div>
+          <p class="text-sm text-stone-700 mt-1">The best trail runners in the world hike the steep stuff. "Hike the uphills, run the downhills and flats" is literally a pro strategy.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="font-bold text-[var(--moss)]">💧 Carry 16 oz + a Salty Snack</div>
+          <p class="text-sm text-stone-700 mt-1">Anything under 5 miles, you're fine with just water. Bring a salted pretzel or electrolyte tab. You'll feel like a genius at mile 2.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="font-bold text-[var(--moss)]">📸 Take the Ugly Picture at the Summit</div>
+          <p class="text-sm text-stone-700 mt-1">The sweaty, red-faced, out-of-breath selfie is the one you'll actually be proud of in 6 months. Post it. Tag it. Own it.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="#shop" class="inline-block bg-[var(--moss)] text-white font-bold px-6 py-3 rounded-full hover:bg-green-800 transition">
+          See trail tees & stickers →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ SECTION 3: DAD ADVENTURES ============ -->
+<section id="dads" class="py-20 bg-[#fff7ed]">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <span class="eyebrow">Content Pillar #3</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">Dad Adventures: <br/>Weekend Hikes With Your Kids</h2>
+      <p class="text-stone-600 mt-4 text-lg">
+        Your kids won't remember the iPad. They'll remember the time you all got slightly lost and ate trail mix on a rock. This is the unofficial dad's field guide to dragging your tiny humans into the woods — and them actually wanting to come back.
+      </p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <div class="printable p-5">
+          <div class="text-3xl">🎒</div>
+          <div class="font-bold mt-2">The "One Cool Thing" Rule</div>
+          <p class="text-sm text-stone-700 mt-1">Tell them there's a waterfall / cool bug / weird rock up ahead. Even if you're not sure. Kids hike 3x farther when there's a treasure.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="text-3xl">🍫</div>
+          <div class="font-bold mt-2">Bribery, But Make It Classy</div>
+          <p class="text-sm text-stone-700 mt-1">Halfway-point snack is sacred. Let them pick it. The hike is now a transaction, and everyone wins.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="text-3xl">️</div>
+          <div class="font-bold mt-2">Give Them the Map</div>
+          <p class="text-sm text-stone-700 mt-1">Print a trail map and let the youngest hold it. They'll feel important and stop asking "are we there yet" as much. Promise.</p>
+        </div>
+        <div class="printable p-5">
+          <div class="text-3xl">🏕️</div>
+          <div class="font-bold mt-2">End at Something</div>
+          <p class="text-sm text-stone-700 mt-1">A playground, an ice cream shop, a creek. The hike is the journey; the endpoint is the victory lap.</p>
+        </div>
+      </div>
+      <div class="mt-8 bg-white border-2 border-dashed border-orange-300 rounded-2xl p-5">
+        <div class="font-bold text-[var(--sunrise)]"> 12 Weekend Trail Ideas (Ages 2–10)</div>
+        <ol class="mt-2 text-sm text-stone-700 space-y-1 list-decimal list-inside">
+          <li>Pond loop with duck-bread mission (1 mile)</li>
+          <li>"Find 5 different leaves" scavenger hunt</li>
+          <li>Sunrise short hike — pancakes after</li>
+          <li>Night hike with headlamps (spooky-fun)</li>
+          <li>Creek-stone stacking championship</li>
+          <li>Wildflower ID walk with free Seek app</li>
+          <li>Snowshoe first-timer loop</li>
+          <li>Summit bagel breakfast (wake up early, earn it)</li>
+          <li>Waterfall picnic</li>
+          <li>Campfire + hot dogs at a drive-in campground</li>
+          <li>Full-moon night hike</li>
+          <li>The "longest hike yet" milestone trail</li>
+        </ol>
+      </div>
+    </div>
+    <aside class="reveal">
+      <div class="bg-[#431407] text-white rounded-3xl p-6">
+        <div class="text-xs font-bold tracking-widest text-orange-300 uppercase">For the dads who lead</div>
+        <h3 class="serif text-2xl font-black mt-1">Trailblazer Dad Collection</h3>
+        <p class="text-sm text-orange-100 mt-2">Tees and stickers that say "I'm that dad" without saying it.</p>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">TRAILBLAZER<br/>DAD</div>
+              <div class="text-xs mt-1">🏔️🥾</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">DAD'S<br/>CAMPFIRE<br/>CREW</div>
+              <div class="text-[var(--sunrise)] text-xl mt-1">🔺🔥</div>
+            </div>
+          </div>
+          <div class="mockup col-span-2">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-lg font-black leading-tight">CLIMB<br/>HIGHER, DAD</div>
+              <div class="text-[var(--moss)] text-xl mt-1">🧗♂️</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block mt-5 text-center bg-[var(--sunrise)] text-white font-bold px-5 py-3 rounded-full hover:bg-orange-600 transition">
+          Shop Dad Gear →
+        </a>
+      </div>
+      <div class="mt-5 bg-[#fff7ed] border border-orange-200 rounded-3xl p-5 text-sm text-orange-900">
+        <div class="font-bold">📌 Pin this section</div>
+        <div class="mt-1">Best pin: <em>"12 Weekend Hikes to Do With Your Toddler (That You'll Also Enjoy)"</em> — numbered list graphic, tall format.</div>
+      </div>
+    </aside>
+  </div>
+</section>
+<!-- ============ SECTION 4: THE COMEBACK ============ -->
+<section id="comeback" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+    <aside class="reveal order-2 md:order-1">
+      <div class="bg-[#0f172a] text-white rounded-3xl p-6">
+        <div class="text-xs font-bold tracking-widest text-orange-300 uppercase">For chapter two</div>
+        <h3 class="serif text-2xl font-black mt-1">The Comeback Club</h3>
+        <p class="text-sm text-stone-300 mt-2">Started over? Injured? Burned out? Divorced? This section is yours. Gear that reminds you: the comeback is always louder.</p>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">THE COMEBACK<br/>CLUB</div>
+              <div class="text-xs mt-1 text-stone-600">Stronger Than Before</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">TRUST THE<br/>PROCESS</div>
+              <div class="text-lg mt-1">🧍→🧗</div>
+            </div>
+          </div>
+          <div class="mockup col-span-2">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-lg font-black leading-tight">RESET · REFOCUS<br/>REBUILD</div>
+              <div class="text-[var(--sunrise)] text-2xl mt-1">☀</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block mt-5 text-center bg-[var(--sunrise)] text-white font-bold px-5 py-3 rounded-full hover:bg-orange-600 transition">
+          Shop Comeback Gear →
+        </a>
+      </div>
+      <div class="mt-5 bg-[#fff1f2] border border-rose-200 rounded-3xl p-5 text-sm text-rose-900">
+        <div class="font-bold">📌 Pin this section</div>
+        <div class="mt-1">Best pin: <em>"Starting Over at 30/40/50: The Comeback Journal (Free Printable)"</em> — this one goes viral with the glow-up crowd.</div>
+      </div>
+    </aside>
+    <div class="reveal order-1 md:order-2">
+      <span class="eyebrow">Content Pillar #4</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">The Comeback Journal</h2>
+      <p class="text-stone-600 mt-4 text-lg">
+        Nobody talks about starting over. The injury. The job loss. The breakup. The "I don't even know who I am anymore" Tuesday at 2am. This is the 30-day reset that got me back on my feet — and it's completely free.
+      </p>
+      <div class="mt-6 space-y-4">
+        <div class="printable p-5 border-l-4 border-[var(--sunrise)]">
+          <div class="font-bold">Week 1 — <em>Reset</em></div>
+          <p class="text-sm text-stone-700 mt-1">Sleep. Water. Walks. That's it. You're not building yet; you're clearing the lot. Write one sentence each night: "One small thing I did today for me: ______."</p>
+        </div>
+        <div class="printable p-5 border-l-4 border-sky-500">
+          <div class="font-bold">Week 2 — <em>Refocus</em></div>
+          <p class="text-sm text-stone-700 mt-1">Pick ONE thing. Not five. Not "get my life together." One thing: a 10-minute walk, a phone call, a single page of a book. Do it daily.</p>
+        </div>
+        <div class="printable p-5 border-l-4 border-[var(--moss)]">
+          <div class="font-bold">Week 3 — <em>Rebuild</em></div>
+          <p class="text-sm text-stone-700 mt-1">Double the one thing. Add one more tiny habit. Track it on the printable. Streaks matter more than intensity.</p>
+        </div>
+        <div class="printable p-5 border-l-4 border-purple-500">
+          <div class="font-bold">Week 4 — <em>Rise</em></div>
+          <p class="text-sm text-stone-700 mt-1">Look back. Write a letter to future-you about what you survived. This is the chapter you'll be proud of.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="#freebie" class="inline-block bg-[var(--ink)] text-white font-bold px-6 py-3 rounded-full hover:bg-[var(--sunrise)] transition">
+          ↓ Download the full 30-day journal
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ SECTION 5: GAMIFY FITNESS ============ -->
+<section id="gamify" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <span class="eyebrow text-lime-400">Content Pillar #5</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">Level Up IRL: <br/>Gamifying Your Fitness</h2>
+      <p class="text-stone-300 mt-4 text-lg">
+        You spent 10,000 hours grinding in Skyrim. You can absolutely spend 100 hours grinding your actual life. Here's how to turn your fitness into a real-life RPG — XP, skill trees, boss fights, the whole thing.
+      </p>
+      <div class="mt-6 space-y-4">
+        <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5">
+          <div class="text-lime-400 font-bold">🎮 Create Your Character Sheet</div>
+          <p class="text-sm text-stone-300 mt-1">Write down: Strength, Endurance, Mobility, Mindset. Rate each 1–10. That's your starting stats. Re-rate every 30 days.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5">
+          <div class="text-lime-400 font-bold">⚔️ Turn Workouts Into Quests</div>
+          <p class="text-sm text-stone-300 mt-1">A 20-minute walk = "Forest Patrol +10 XP." A heavy gym session = "Boss Fight." A rest day = "Tavern Recovery." Naming matters.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5">
+          <div class="text-lime-400 font-bold">🏆 Set Milestones, Not Goals</div>
+          <p class="text-sm text-stone-300 mt-1">Goals are vague. Milestones are checkpoints: "First 5K," "First pull-up," "30-day streak." Each one = level up. Celebrate like you beat a boss.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5">
+          <div class="text-lime-400 font-bold">📊 Track Everything</div>
+          <p class="text-sm text-stone-300 mt-1">Use Habitica, a notebook, or a spreadsheet. What gets tracked gets leveled. Data is your save file.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="#shop" class="inline-block bg-lime-400 text-slate-900 font-bold px-6 py-3 rounded-full hover:bg-lime-300 transition">
+          See gamer-fitness gear →
+        </a>
+      </div>
+    </div>
+    <aside class="reveal">
+      <div class="bg-gradient-to-br from-lime-400/20 to-orange-500/20 border border-lime-400/30 rounded-3xl p-6">
+        <div class="text-xs font-bold tracking-widest text-lime-400 uppercase">Gamer × Fitness crossover</div>
+        <h3 class="serif text-2xl font-black mt-1 text-white">Level Up IRL Collection</h3>
+        <p class="text-sm text-stone-300 mt-2">For the gym rats who also raid. Finally, merch that gets both.</p>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-xs text-lime-600 font-bold tracking-widest">LEVELING UP</div>
+              <div class="text-lg font-black leading-tight">IRL</div>
+              <div class="text-lime-500 text-2xl mt-1">▲▲▲</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">SWEAT IS<br/>DATA</div>
+              <div class="text-red-500 text-lg mt-1">📈❤</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">MILESTONES<br/>&gt; MOOD</div>
+              <div class="text-red-500 text-lg mt-1">📊→</div>
+            </div>
+          </div>
+          <div class="mockup">
+            <div class="mockup-shirt text-center" style="background:#f5f5f4">
+              <div class="text-sm font-black leading-tight">TRAINING:<br/>ON</div>
+              <div class="text-sm">EXCUSES: OFF</div>
+              <div class="text-xl mt-1">🟢</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block mt-5 text-center bg-lime-400 text-slate-900 font-bold px-5 py-3 rounded-full hover:bg-lime-300 transition">
+          Shop Gamer Fitness →
+        </a>
+      </div>
+      <div class="mt-5 bg-white/5 border border-lime-400/30 rounded-3xl p-5 text-sm text-lime-200">
+        <div class="font-bold text-white">📌 Pin this section</div>
+        <div class="mt-1">Best pin: <em>"How I Turned My Life Into an RPG (Level Up IRL)"</em> — character sheet graphic with stats. Gamer + fitness audiences save this HARD.</div>
+      </div>
+    </aside>
+  </div>
+</section>
+<!-- ============ FREEBIE SECTION ============ -->
+<section id="freebie" class="py-20 bg-[#fff7ed]">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="freebie rounded-3xl p-8 md:p-12 text-center reveal">
+      <div class="inline-block bg-[var(--sunrise)] text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full">100% FREE · PRINT AT HOME</div>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-4">The Level Up Life — <br/>30-Day Printable Challenge</h2>
+      <p class="text-stone-700 mt-4 text-lg max-w-2xl mx-auto">
+        One page. Four weeks. Tiny daily habits across mindset, movement, and mountains. Print it, stick it on your fridge, and cross off one box a day.
+      </p>
+      <!-- Printable preview -->
+      <div class="mt-8 bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-orange-100 max-w-2xl mx-auto text-left">
+        <div class="flex items-center justify-between border-b-2 border-[var(--sunrise)] pb-3">
+          <div class="serif font-black text-xl">LEVEL UP LIFE</div>
+          <div class="text-xs tracking-widest text-[var(--sunrise)] font-bold">30-DAY CHALLENGE</div>
+        </div>
+        <div class="grid grid-cols-7 gap-1 mt-4 text-xs text-center font-bold text-stone-400">
+          <div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+        </div>
+        <div class="grid grid-cols-7 gap-1 mt-2" id="calGrid"></div>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+          <div class="bg-orange-50 border border-orange-200 rounded p-2">☀ Morning Reset</div>
+          <div class="bg-green-50 border border-green-200 rounded p-2">🥾 Move Outside</div>
+          <div class="bg-sky-50 border border-sky-200 rounded p-2">💧 Hydrate</div>
+          <div class="bg-purple-50 border border-purple-200 rounded p-2">✍️ 1 Sentence</div>
+        </div>
+      </div>
+      <div class="mt-8">
+        <button id="downloadBtn" class="bg-[var(--ink)] text-white font-bold px-8 py-4 rounded-full hover:bg-[var(--sunrise)] transition text-lg">
+          ↓ Download PDF (coming soon)
+        </button>
+        <p class="text-sm text-stone-500 mt-3">PDF is being generated — check back soon, or email <em>hello@leveluplife.com</em> to get it early.</p>
+      </div>
+      <!-- Email capture -->
+      <form id="emailForm" class="mt-6 max-w-md mx-auto flex gap-2" onsubmit="handleEmail(event)">
+        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-full border border-stone-300 focus:outline-none focus:border-[var(--sunrise)]" />
+        <button class="bg-[var(--sunrise)] text-white font-bold px-6 py-3 rounded-full hover:bg-orange-600 transition">Notify me</button>
+      </form>
+      <div id="emailMsg" class="text-sm text-green-700 mt-2 hidden">You're on the list! 🎉</div>
+    </div>
+  </div>
+</section>
+<!-- ============ SHOP LOOKS ============ -->
+<section id="shop" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center reveal">
+      <span class="eyebrow">Wear the mindset</span>
+      <h2 class="serif text-3xl md:text-5xl font-black mt-2">Shop the Collections</h2>
+      <p class="text-stone-600 mt-3 max-w-2xl mx-auto">All designs available as t-shirts, hoodies, stickers, mugs, journals, phone cases, and more on Redbubble.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <!-- Collection card 1 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-orange-50 to-white border border-orange-100 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center">
+            <div class="text-xl font-black leading-tight">EARN YOUR<br/>SUNRISE</div>
+            <div class="text-[var(--sunrise)] text-2xl mt-2">☀</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-[var(--sunrise)] uppercase">Outdoor Motivation</div>
+          <div class="serif font-black text-xl mt-1">Sunrise Series</div>
+          <div class="text-sm text-stone-600 mt-1">Earn Your Sunrise · Earn Your Summit · Earn Your View</div>
+        </div>
+      </a>
+      <!-- Collection card 2 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-green-50 to-white border border-green-100 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center">
+            <div class="text-xl font-black leading-tight">NO TRAIL<br/>TOO TOUGH</div>
+            <div class="text-[var(--moss)] text-2xl mt-2">〰</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-[var(--moss)] uppercase">Trail & Run</div>
+          <div class="serif font-black text-xl mt-1">Trail Ready</div>
+          <div class="text-sm text-stone-600 mt-1">No Trail Too Tough · Stronger Every Mile · Train Outside</div>
+        </div>
+      </a>
+      <!-- Collection card 3 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-amber-50 to-white border border-amber-100 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center" style="background:#f5f5f4">
+            <div class="text-xl font-black leading-tight">TRAILBLAZER<br/>DAD</div>
+            <div class="text-[var(--sunrise)] text-2xl mt-2">🏔</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-amber-700 uppercase">For Dads</div>
+          <div class="serif font-black text-xl mt-1">Trailblazer Dad</div>
+          <div class="text-sm text-stone-600 mt-1">Trailblazer Dad · Dad's Campfire Crew · Climb Higher Dad</div>
+        </div>
+      </a>
+      <!-- Collection card 4 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-sky-50 to-white border border-sky-100 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center">
+            <div class="text-xl font-black leading-tight">BEGIN<br/>ANYWAY</div>
+            <div class="text-sky-600 text-2xl mt-2">—</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-sky-700 uppercase">Glow Up</div>
+          <div class="serif font-black text-xl mt-1">Glow Up Season</div>
+          <div class="text-sm text-stone-600 mt-1">Begin Anyway · The Moment Is Now · Trust the Process</div>
+        </div>
+      </a>
+      <!-- Collection card 5 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-slate-100 to-white border border-slate-200 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center" style="background:#f5f5f4">
+            <div class="text-xl font-black leading-tight">THE COMEBACK<br/>CLUB</div>
+            <div class="text-xs mt-1 text-stone-600">Stronger Than Before</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-slate-700 uppercase">Second Chapters</div>
+          <div class="serif font-black text-xl mt-1">The Comeback</div>
+          <div class="text-sm text-stone-600 mt-1">The Comeback Club · Trust the Process · Discipline Dept</div>
+        </div>
+      </a>
+      <!-- Collection card 6 -->
+      <a href="#" class="reveal group block bg-gradient-to-br from-lime-50 to-white border border-lime-200 rounded-3xl p-5 hover:shadow-xl transition">
+        <div class="mockup">
+          <div class="mockup-shirt text-center">
+            <div class="text-xl font-black leading-tight">LEVEL UP<br/>DAILY</div>
+            <div class="text-lime-600 text-2xl mt-2">▲▲▲</div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="text-xs font-bold tracking-widest text-lime-700 uppercase">Gamer × Fitness</div>
+          <div class="serif font-black text-xl mt-1">Level Up IRL</div>
+          <div class="text-sm text-stone-600 mt-1">Level Up Daily · Sweat Is Data · Milestones &gt; Mood</div>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-12 reveal">
+      <a href="https://www.redbubble.com/people/YOUR-USERNAME/shop" class="inline-block bg-[var(--ink)] text-white font-bold px-8 py-4 rounded-full hover:bg-[var(--sunrise)] transition text-lg">
+        Browse the Full Redbubble Shop →
+      </a>
+      <p class="text-sm text-stone-500 mt-3">Replace <code class="bg-stone-100 px-2 py-0.5 rounded">YOUR-USERNAME</code> with your actual Redbubble URL.</p>
+    </div>
+  </div>
+</section>
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[var(--ink)] text-stone-300 py-12">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="flex items-center gap-2 text-white font-black text-lg">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 text-white flex items-center justify-center">▲</span>
+        Level Up Life
+      </div>
+      <p class="text-sm mt-3">Free guides. Free printables. Gear that reminds you to show up. Built for people figuring it out.</p>
+    </div>
+    <div>
+      <div class="font-bold text-white mb-3">Explore</div>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#morning" class="hover:text-[var(--sunrise)]">Morning Reset</a></li>
+        <li><a href="#trail" class="hover:text-[var(--sunrise)]">Trail Ready</a></li>
+        <li><a href="#dads" class="hover:text-[var(--sunrise)]">Dad Adventures</a></li>
+        <li><a href="#comeback" class="hover:text-[var(--sunrise)]">The Comeback</a></li>
+        <li><a href="#gamify" class="hover:text-[var(--sunrise)]">Gamify Fitness</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-bold text-white mb-3">Follow</div>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://pinterest.com/YOUR-USERNAME" class="hover:text-[var(--sunrise)]">📌 Pinterest (most active)</a></li>
+        <li><a href="https://www.redbubble.com/people/YOUR-USERNAME/shop" class="hover:text-[var(--sunrise)]">🛍️ Redbubble Shop</a></li>
+        <li><a href="#" class="hover:text-[var(--sunrise)]">✉️ Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-white/10 text-xs text-stone-500 flex flex-wrap gap-4 justify-between">
+    <div>© 2026 Level Up Life. All rights reserved.</div>
+    <div>Made with ☕ and too many early mornings.</div>
+  </div>
+</footer>
+<script>
+  // Mobile menu toggle
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+  });
+  // Generate calendar grid for the printable preview
+  const cal = document.getElementById('calGrid');
+  for (let i = 1; i <= 30; i++) {
+    const d = document.createElement('div');
+    d.className = 'aspect-square rounded border border-stone-200 flex items-center justify-center text-xs text-stone-500 hover:bg-orange-50 cursor-default';
+    d.textContent = i;
+    cal.appendChild(d);
+  }
+  // Download button
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    alert('🚧 PDF is being built! Check back soon, or leave your email below to get it first.');
+  });
+  // Email form
+  function handleEmail(e) {
+    e.preventDefault();
+    document.getElementById('emailMsg').classList.remove('hidden');
+    e.target.reset();
+    // TODO: wire up to Mailchimp / ConvertKit / Buttondown
+  }
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
