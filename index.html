@@ -628,37 +628,32 @@
       <div class="inline-block bg-[var(--sunrise)] text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full">100% FREE · PRINT AT HOME</div>
       <h2 class="serif text-3xl md:text-5xl font-black mt-4">The Level Up Life — <br/>30-Day Printable Challenge</h2>
       <p class="text-stone-700 mt-4 text-lg max-w-2xl mx-auto">
-        One page. Four weeks. Tiny daily habits across mindset, movement, and mountains. Print it, stick it on your fridge, and cross off one box a day.
+        Two pages. Four weeks. Tiny daily habits across mindset, movement, and mountains. Print it, stick it on your fridge, and cross off one box a day.
       </p>
       <!-- Printable preview -->
-      <div class="mt-8 bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-orange-100 max-w-2xl mx-auto text-left">
-        <div class="flex items-center justify-between border-b-2 border-[var(--sunrise)] pb-3">
-          <div class="serif font-black text-xl">LEVEL UP LIFE</div>
-          <div class="text-xs tracking-widest text-[var(--sunrise)] font-bold">30-DAY CHALLENGE</div>
-        </div>
-        <div class="grid grid-cols-7 gap-1 mt-4 text-xs text-center font-bold text-stone-400">
-          <div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
-        </div>
-        <div class="grid grid-cols-7 gap-1 mt-2" id="calGrid"></div>
-        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
-          <div class="bg-orange-50 border border-orange-200 rounded p-2">☀ Morning Reset</div>
-          <div class="bg-green-50 border border-green-200 rounded p-2">🥾 Move Outside</div>
-          <div class="bg-sky-50 border border-sky-200 rounded p-2">💧 Hydrate</div>
-          <div class="bg-purple-50 border border-purple-200 rounded p-2">✍️ 1 Sentence</div>
-        </div>
-      </div>
-      <div class="mt-8">
-        <button id="downloadBtn" class="bg-[var(--ink)] text-white font-bold px-8 py-4 rounded-full hover:bg-[var(--sunrise)] transition text-lg">
-          ↓ Download PDF (coming soon)
-        </button>
-        <p class="text-sm text-stone-500 mt-3">PDF is being generated — check back soon, or email <em>hello@leveluplife.com</em> to get it early.</p>
-      </div>
+     <div class="mt-8 max-w-6xl mx-auto">
+  <img
+    src="30-day-challenge-preview.png"
+    alt="Preview of the Level Up Life 30-Day Challenge PDF"
+    class="w-full h-auto rounded-2xl shadow-xl border border-orange-100"
+    loading="lazy"
+  />
+</div>
+     <div class="mt-10 text-center">
+  <a href="30 Day Challenge free PDF.pdf"
+     download
+     class="inline-block bg-[var(--ink)] text-white font-bold px-8 py-4 rounded-full hover:bg-[var(--sunrise)] transition text-lg">
+
+      ↓ Download the Free PDF
+
+  </a>
+
+  <p class="text-sm text-stone-500 mt-3">
+      Instant download • Printable • US Letter (8.5 × 11")
+  </p>
+</div>
       <!-- Email capture -->
-      <form id="emailForm" class="mt-6 max-w-md mx-auto flex gap-2" onsubmit="handleEmail(event)">
-        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-full border border-stone-300 focus:outline-none focus:border-[var(--sunrise)]" />
-        <button class="bg-[var(--sunrise)] text-white font-bold px-6 py-3 rounded-full hover:bg-orange-600 transition">Notify me</button>
-      </form>
-      <div id="emailMsg" class="text-sm text-green-700 mt-2 hidden">You're on the list! 🎉</div>
+         
     </div>
   </div>
 </section>
