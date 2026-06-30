@@ -820,17 +820,7 @@
     d.textContent = i;
     cal.appendChild(d);
   }
-  // Download button
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    alert('🚧 PDF is being built! Check back soon, or leave your email below to get it first.');
-  });
-  // Email form
-  function handleEmail(e) {
-    e.preventDefault();
-    document.getElementById('emailMsg').classList.remove('hidden');
-    e.target.reset();
-    // TODO: wire up to Mailchimp / ConvertKit / Buttondown
-  }
+ 
   // Reveal-on-scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
