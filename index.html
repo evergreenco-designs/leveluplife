@@ -797,14 +797,7 @@
   document.querySelectorAll('#mobileMenu a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
   });
-  // Generate calendar grid for the printable preview
-  const cal = document.getElementById('calGrid');
-  for (let i = 1; i <= 30; i++) {
-    const d = document.createElement('div');
-    d.className = 'aspect-square rounded border border-stone-200 flex items-center justify-center text-xs text-stone-500 hover:bg-orange-50 cursor-default';
-    d.textContent = i;
-    cal.appendChild(d);
-  }
+
  
   // Reveal-on-scroll
   const io = new IntersectionObserver((entries) => {
